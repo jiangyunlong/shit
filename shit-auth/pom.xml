@@ -2,17 +2,16 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   	<modelVersion>4.0.0</modelVersion>
 
-  	<groupId>com.shit</groupId>
-  	<artifactId>auth</artifactId>
+  	<groupId>com.shit.auth</groupId>
+  	<artifactId>parent</artifactId>
   	<version>1.0</version>
-  	<packaging>war</packaging>
+  	<packaging>pom</packaging>
 
-  	<name>auth</name>
+  	<name>shit-auth-parent</name>
   	<url>http://maven.apache.org</url>
   	
-  	<parent>
-  		<groupId>com.shit</groupId>
-  		<artifactId>parent</artifactId>
-  		<version>1.0</version>
-  	</parent>
+  	<modules>
+  		<module>shit-auth-dao</module>
+  		<module>shit-auth-service</module>
+  	</modules>
 </project>
