@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<context:property-placeholder location="classpath:*.properties" />
+
+	<import resource="classpath:mysql.xml" />
+	<import resource="classpath:applicationContext-user-service.xml" />
+
+	<!-- 公共信息，也可以用dubbo.properties配置 -->
+	<!-- <dubbo:registry address="${dubbo.address}" timeout="60000"
+		group="${dubbo.group}" file="${user.home}/.dubbo/registry-admin.cache"/>
+	<dubbo:monitor protocol="registry" />
+	<dubbo:application name="hdb-admin" owner="zyj"
+		organization="hdb" />
+
+	<dubbo:protocol name="dubbo" />
+	<dubbo:protocol name="rest" />
+
+
+	<dubbo:reference id="authFacade"
+		interface="com.hengda.hdi.auth.facade.AuthFacade" protocol="dubbo"
+		version="${auth.version}">
+		<dubbo:method name="validToken" validation="true"></dubbo:method>
+	</dubbo:reference>
+	
+	<dubbo:reference id="permissionFacade"
+		interface="com.hengda.hdi.auth.facade.PermissionFacade" protocol="dubbo"
+		version="${auth.version}">
+		<dubbo:method name="getAllPermissions" validation="true"></dubbo:method>
+	</dubbo:reference> -->
+
+</beans>

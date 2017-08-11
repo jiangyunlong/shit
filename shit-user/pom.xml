@@ -4,13 +4,51 @@
 
   	<groupId>com.shit.user</groupId>
   	<artifactId>parent</artifactId>
-  	<version>1.0</version>
+  	<version>0.0.1-SNAPSHOT</version>
   	<packaging>pom</packaging>
 
   	<name>shit-user-parent</name>
   	<url>http://maven.apache.org</url>
   	
   	<modules>
-  		<!--  -->
+  		<module>shit-user-common</module>
+  		<module>shit-user-dao</module>
+  		<module>shit-user-service</module>
+  		<module>shit-user-facade</module>
   	</modules>
+  	
+  	<properties>
+  		<shit-user-common.version>0.0.1-SNAPSHOT</shit-user-common.version>
+  		<shit-user-dao.version>0.0.1-SNAPSHOT</shit-user-dao.version>
+  		<shit-user-service.version>0.0.1-SNAPSHOT</shit-user-service.version>
+  		<shit-user-facade.version>0.0.1-SNAPSHOT</shit-user-facade.version>
+  	</properties>
+  	
+  	<dependencyManagement>
+  		<dependencies>
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-common</artifactId>
+  				<version>${shit-user-common.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-dao</artifactId>
+  				<version>${shit-user-dao.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-service</artifactId>
+  				<version>${shit-user-service.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-facade</artifactId>
+  				<version>${shit-user-facade.version}</version>
+  			</dependency>
+  		</dependencies>
+  	</dependencyManagement>
 </project>
