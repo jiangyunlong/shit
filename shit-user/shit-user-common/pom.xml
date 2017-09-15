@@ -9,7 +9,7 @@
   	</parent>
   	
   	<artifactId>shit-user-common</artifactId>
-  	<version>${shit_user_common_version}</version>
+  	<version>${shit-user-common.version}</version>
   	<name>shit-user-common</name>
   	<url>http://maven.apache.org</url>
   	
