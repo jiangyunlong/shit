@@ -2,7 +2,7 @@ package com.shit.user.dao.mapper;
 
 import java.util.List;
 
-import com.shit.user.dao.domain.User;
+import com.shit.user.common.domain.User;
 
 /**
  * @TODO

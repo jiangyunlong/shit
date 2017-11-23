@@ -14,14 +14,14 @@
   		<module>shit-user-common</module>
   		<module>shit-user-dao</module>
   		<module>shit-user-service</module>
-  		<module>shit-user-facade</module>
+  		<module>shit-user-web</module>
   	</modules>
   	
   	<properties>
   		<shit-user-common.version>0.0.1-SNAPSHOT</shit-user-common.version>
   		<shit-user-dao.version>0.0.1-SNAPSHOT</shit-user-dao.version>
   		<shit-user-service.version>0.0.1-SNAPSHOT</shit-user-service.version>
-  		<shit-user-facade.version>0.0.1-SNAPSHOT</shit-user-facade.version>
+  		<shit-user-web.version>0.0.1-SNAPSHOT</shit-user-web.version>
   		<mysql-connector-java.version>5.1.34</mysql-connector-java.version>
   	</properties>
   	
@@ -47,8 +47,8 @@
   			
   			<dependency>
   				<groupId>com.shit.user</groupId>
-  				<artifactId>shit-user-facade</artifactId>
-  				<version>${shit-user-facade.version}</version>
+  				<artifactId>shit-user-web</artifactId>
+  				<version>${shit-user-web.version}</version>
   			</dependency>
   			
   			<dependency>  
