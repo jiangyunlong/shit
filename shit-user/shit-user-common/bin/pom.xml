@@ -8,24 +8,12 @@
   		<version>0.0.1-SNAPSHOT</version>
   	</parent>
   	
-  	<artifactId>shit-user-dao</artifactId>
-  	<version>${shit-user-dao.version}</version>
-  	<name>shit-user-dao</name>
+  	<artifactId>shit-user-common</artifactId>
+  	<version>${shit-user-common.version}</version>
+  	<name>shit-user-common</name>
   	<url>http://maven.apache.org</url>
   	
   	<properties>
   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	</properties>
-  	
-  	<dependencies>
-  		<dependency>
-		    <groupId>com.shit.user</groupId>
-			<artifactId>shit-user-common</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>org.mybatis.spring.boot</groupId>
-		    <artifactId>mybatis-spring-boot-starter</artifactId>
-		    <version>1.3.0</version>
-		</dependency>
-	</dependencies>
 </project>
