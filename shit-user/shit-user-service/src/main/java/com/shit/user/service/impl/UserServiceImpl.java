@@ -6,9 +6,9 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.shit.user.api.service.UserService;
 import com.shit.user.common.domain.User;
 import com.shit.user.dao.mapper.UserMapper;
-import com.shit.user.service.UserService;
 
 /**
  * @TODO
@@ -20,6 +20,11 @@ public class UserServiceImpl implements UserService{
 
 	@Resource
 	private UserMapper userMapper;
+	
+	@Override
+	public void test(String name) {
+		System.out.println("----------"+name+"--------");
+	}
 	
 	@Override
 	public User findOne(Long id) {

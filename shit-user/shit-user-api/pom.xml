@@ -8,9 +8,9 @@
   		<version>0.0.1-SNAPSHOT</version>
   	</parent>
   	
-  	<artifactId>shit-user-service</artifactId>
-  	<version>${shit-user-service.version}</version>
-  	<name>shit-user-service</name>
+  	<artifactId>shit-user-api</artifactId>
+  	<version>${shit-user-api.version}</version>
+  	<name>shit-user-api</name>
   	<url>http://maven.apache.org</url>
   	
   	<properties>
@@ -18,15 +18,9 @@
   	</properties>
   	
   	<dependencies>
-  		<dependency>
-			<groupId>com.shit.user</groupId>
-			<artifactId>shit-user-api</artifactId>
-		</dependency>
-		
 		<dependency>
 			<groupId>com.shit.user</groupId>
-			<artifactId>shit-user-dao</artifactId>
+			<artifactId>shit-user-common</artifactId>
 		</dependency>
 	</dependencies>
-	
 </project>

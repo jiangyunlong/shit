@@ -12,6 +12,7 @@
   	
   	<modules>
   		<module>shit-user-common</module>
+  		<module>shit-user-api</module>
   		<module>shit-user-dao</module>
   		<module>shit-user-service</module>
   		<module>shit-user-web</module>
@@ -19,6 +20,7 @@
   	
   	<properties>
   		<shit-user-common.version>0.0.1-SNAPSHOT</shit-user-common.version>
+  		<shit-user-api.version>0.0.1-SNAPSHOT</shit-user-api.version>
   		<shit-user-dao.version>0.0.1-SNAPSHOT</shit-user-dao.version>
   		<shit-user-service.version>0.0.1-SNAPSHOT</shit-user-service.version>
   		<shit-user-web.version>0.0.1-SNAPSHOT</shit-user-web.version>
@@ -31,6 +33,12 @@
   				<groupId>com.shit.user</groupId>
   				<artifactId>shit-user-common</artifactId>
   				<version>${shit-user-common.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-api</artifactId>
+  				<version>${shit-user-api.version}</version>
   			</dependency>
   			
   			<dependency>

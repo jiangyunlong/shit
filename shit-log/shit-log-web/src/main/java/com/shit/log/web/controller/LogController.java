@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.shit.log.common.domain.Log;
 import com.shit.log.dao.mapper.LogMapper;
+import com.shit.user.api.service.UserService;
 
 /**
  * @TODO
@@ -23,6 +24,9 @@ public class LogController {
 	@Resource
 	private LogMapper logMapper;
 	
+	@Resource
+	private UserService userService;
+	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public void findOne(Log log){
 		log.setCreated(new Date());
@@ -31,6 +35,7 @@ public class LogController {
 	
 	@RequestMapping("/list")
 	public List<Log> getAll(){
+		userService.test("xxxxxxxxxxxxx");
 		return logMapper.getAll();
 	}
 	
