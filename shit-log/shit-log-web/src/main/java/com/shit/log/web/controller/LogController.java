@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +22,8 @@ import com.shit.user.api.service.UserService;
 @RestController
 @RequestMapping("/log")
 public class LogController {
+	
+	final static Logger logger = LoggerFactory.getLogger(LogController.class);
 
 	@Resource
 	private LogMapper logMapper;
@@ -35,6 +39,7 @@ public class LogController {
 	
 	@RequestMapping("/list")
 	public List<Log> getAll(){
+		logger.info("get all log list.");
 		userService.test("xxxxxxxxxxxxx");
 		return logMapper.getAll();
 	}
