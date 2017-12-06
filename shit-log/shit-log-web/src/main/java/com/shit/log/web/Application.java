@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ImportResource;
 @EnableAutoConfiguration
 @MapperScan("com.shit.log.dao.mapper")
 public class Application {
-
+	
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);
     }
