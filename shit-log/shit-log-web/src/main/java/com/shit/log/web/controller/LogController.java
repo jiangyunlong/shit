@@ -7,9 +7,11 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.shit.log.common.domain.Log;
 import com.shit.log.dao.mapper.LogMapper;
 import com.shit.user.api.service.UserService;
@@ -24,6 +26,9 @@ import com.shit.user.api.service.UserService;
 public class LogController {
 	
 	final static Logger logger = LoggerFactory.getLogger(LogController.class);
+	
+	@Resource
+	private StringRedisTemplate stringRedisTemplate;
 
 	@Resource
 	private LogMapper logMapper;
@@ -39,9 +44,16 @@ public class LogController {
 	
 	@RequestMapping("/list")
 	public List<Log> getAll(){
+		
 		logger.info("get all log list.");
 		userService.test("xxxxxxxxxxxxx");
 		return logMapper.getAll();
+	}
+	
+	@RequestMapping("/redis")
+	public void redis(){
+		stringRedisTemplate.opsForValue().set("aaa", "111");
+		System.out.println(stringRedisTemplate.opsForValue().get("aaa"));
 	}
 	
 }
