@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.shit.log.common.domain.Log;
 import com.shit.log.dao.mapper.LogMapper;
 import com.shit.user.api.service.UserService;
@@ -50,7 +51,7 @@ public class LogController {
 	@Resource
 	private LogMapper logMapper;
 	
-	@Resource
+	@Reference
 	private UserService userService;
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)

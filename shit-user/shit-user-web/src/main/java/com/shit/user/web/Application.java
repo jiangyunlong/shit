@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @ImportResource("classpath:META-INF/spring/applicationContext-*.xml")
 @Configuration  
-@ComponentScan
+@ComponentScan(basePackages = {"com.shit.user.service.impl"})
 @EnableAutoConfiguration
 @MapperScan("com.shit.user.dao.mapper")
 public class Application {

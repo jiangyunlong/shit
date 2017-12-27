@@ -1,5 +1,10 @@
 package com.shit.user.common.domain;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+
 /**
  * @TODO
  * @author Long
@@ -46,4 +51,38 @@ public class User {
     public void setAge(Integer age) {
         this.age = age;
     }
+    
+    @Override
+	public boolean equals(Object obj) {
+		
+		if (!(obj instanceof User)) {
+			return false;
+		}
+		User rhs = (User) obj;
+		return new EqualsBuilder()
+		.append(this.id, rhs.id)
+		.append(this.username, rhs.username)
+		.append(this.age, rhs.age)
+		.isEquals();
+	}
+
+	@Override
+	public int hashCode() {
+		
+		return new HashCodeBuilder(-82280557, -700257973)
+				.append(this.id) 
+				.append(this.username) 
+				.append(this.age) 
+				.toHashCode();
+	}
+
+	@Override
+	public String toString() {
+		
+		return new ToStringBuilder(this)
+				.append("id", this.id) 
+				.append("username", this.username) 
+				.append("age", this.age) 
+				.toString();
+	}
 }
