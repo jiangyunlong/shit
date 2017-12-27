@@ -13,10 +13,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jms.core.JmsMessagingTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.shit.log.common.domain.Log;
 import com.shit.log.dao.mapper.LogMapper;
 import com.shit.user.api.service.UserService;
@@ -26,7 +30,7 @@ import com.shit.user.api.service.UserService;
  * @author Long
  * @date 2017年11月23日下午6:36:37
  */
-@RestController
+@Controller
 @RequestMapping("/log")
 public class LogController {
 	
@@ -50,7 +54,7 @@ public class LogController {
 	@Resource
 	private LogMapper logMapper;
 	
-	@Resource
+	@Reference
 	private UserService userService;
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
@@ -60,6 +64,7 @@ public class LogController {
 	}
 	
 	@RequestMapping("/list")
+	@ResponseBody
 	public List<Log> getAll(){
 		
 		logger.info("get all log list.");
@@ -68,12 +73,14 @@ public class LogController {
 	}
 	
 	@RequestMapping("/redis")
+	@ResponseBody
 	public void redis(){
 		stringRedisTemplate.opsForValue().set("aaa", "111");
 		System.out.println(stringRedisTemplate.opsForValue().get("aaa"));
 	}
 	
 	@RequestMapping("/sendMQ")
+	@ResponseBody
 	public void mq(){
     	logger.info("-----------------------send-----------------------");
     	List<String> list = new ArrayList<String>();
@@ -83,6 +90,13 @@ public class LogController {
     		this.jmsMessagingTemplate.convertAndSend(queue2, "22222hi,activeMQ"+i);
     		this.jmsMessagingTemplate.convertAndSend(topic1, "11111hi,topicMQ"+i);
     	}
+	}
+	
+	@RequestMapping("/listpage")
+	public String listpage(ModelMap map){
+		logger.info("listpage.");
+		map.addAttribute("name", "thymeleaf");
+        return "log/list";
 	}
 	
 }

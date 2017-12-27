@@ -1,5 +1,9 @@
 package com.shit.log.common.domain;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 public class Log {
 	// id
 	protected Long  id;
@@ -43,6 +47,40 @@ public class Log {
 	public java.util.Date getCreated() 
 	{
 		return this.created;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (!(obj instanceof Log)) {
+			return false;
+		}
+		Log rhs = (Log) obj;
+		return new EqualsBuilder()
+		.append(this.id, rhs.id)
+		.append(this.content, rhs.content)
+		.append(this.created, rhs.created)
+		.isEquals();
+	}
+
+	@Override
+	public int hashCode() {
+		
+		return new HashCodeBuilder(-82280557, -700257973)
+				.append(this.id) 
+				.append(this.content) 
+				.append(this.created) 
+				.toHashCode();
+	}
+
+	@Override
+	public String toString() {
+		
+		return new ToStringBuilder(this)
+				.append("id", this.id) 
+				.append("content", this.content) 
+				.append("created", this.created) 
+				.toString();
 	}
 
 }
