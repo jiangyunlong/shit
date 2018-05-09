@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+
+  	<groupId>com.shit.user</groupId>
+  	<artifactId>parent</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<packaging>pom</packaging>
+
+  	<name>shit-user-parent</name>
+  	<url>http://maven.apache.org</url>
+  	
+  	<modules>
+  		<module>shit-user-common</module>
+  		<module>shit-user-api</module>
+  		<module>shit-user-dao</module>
+  		<module>shit-user-service</module>
+  		<module>shit-user-web</module>
+  	</modules>
+  	
+  	<properties>
+  		<shit-user-common.version>0.0.1-SNAPSHOT</shit-user-common.version>
+  		<shit-user-api.version>0.0.1-SNAPSHOT</shit-user-api.version>
+  		<shit-user-dao.version>0.0.1-SNAPSHOT</shit-user-dao.version>
+  		<shit-user-service.version>0.0.1-SNAPSHOT</shit-user-service.version>
+  		<shit-user-web.version>0.0.1-SNAPSHOT</shit-user-web.version>
+  		<mysql-connector-java.version>5.1.34</mysql-connector-java.version>
+  	</properties>
+  	
+  	<dependencyManagement>
+  		<dependencies>
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-common</artifactId>
+  				<version>${shit-user-common.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-api</artifactId>
+  				<version>${shit-user-api.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-dao</artifactId>
+  				<version>${shit-user-dao.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-service</artifactId>
+  				<version>${shit-user-service.version}</version>
+  			</dependency>
+  			
+  			<dependency>
+  				<groupId>com.shit.user</groupId>
+  				<artifactId>shit-user-web</artifactId>
+  				<version>${shit-user-web.version}</version>
+  			</dependency>
+  			
+  			<dependency>  
+	            <groupId>mysql</groupId>  
+	            <artifactId>mysql-connector-java</artifactId>  
+	            <version>${mysql-connector-java.version}</version>  
+	        </dependency>
+  		</dependencies>
+  	</dependencyManagement>
+</project>
